@@ -8,7 +8,6 @@ const App = () => {
   const [startGame, setStartGame] = useState(false);
   const [playerAName, setPlayerAName] = useState("");
   const [playerBName, setPlayerBName] = useState("");
-
   useEffect(() => {
     if (scoreValueA < 11 && scoreValueB < 11) {
       return;
@@ -21,7 +20,7 @@ const App = () => {
       toast.success(`Congrats✨ ${playerBName || "Player B"} wins🎉`);
       resetGame();
     }
-  }, [scoreValueA, scoreValueB]);
+  }, [scoreValueA, scoreValueB, playerAName, playerBName]);
 
   const resetGame = () => {
     setScoreValueA(0);
